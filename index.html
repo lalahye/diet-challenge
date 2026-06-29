@@ -399,7 +399,7 @@ async function loadWarnHistory() {
       html += '<div class="wh-row"><div style="font-size:11px;color:var(--text-sub)">' + row.label + '</div>';
       for (let i = 0; i < 3; i++) {
         const entry = row.warned.find(w => w.memberIdx === i);
-        if (entry) {
+        if (entry && entry.warnCount > 0) {
           if (entry.warnCount >= 2) {
             html += '<div><span class="wcell wcell-fine">💸 ' + entry.warnCount + '회</span></div>';
           } else {
